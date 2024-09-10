@@ -11,7 +11,7 @@ return {
         'RainbowDelimiterViolet',
         'RainbowDelimiterCyan',
       },
+      vim.api.nvim_set_hl(0, 'RainbowDelimiterYellow', { fg = '#FFDD00', bg = 'NONE' }),
     }
-    vim.api.nvim_set_hl(0, 'RainbowDelimiterYellow', { fg = '#FFDD00', bg = 'NONE' })
   end,
 }

@@ -48,6 +48,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
         grep_string = {
           initial_mode = 'normal',
         },
+        diagnostics = {
+          initial_mode = 'normal',
+        },
       },
       extensions = {
         ['ui-select'] = {
