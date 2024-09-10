@@ -7,7 +7,7 @@ require 'kickstart.autocmds'
 -- Load keymaps
 require 'kickstart.keymaps'
 
--- Load package manager
+-- Load package manager and plugins
 require 'kickstart.lazy'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
