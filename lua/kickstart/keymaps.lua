@@ -8,6 +8,10 @@ vim.keymap.set({ 'n', 'v' }, 'K', '5k')
 vim.keymap.set('n', '<C-s>', ':w<CR>')
 vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>')
 vim.keymap.set({ 'n', 'i' }, '<C-a>', '<Esc>gg_vG$')
+vim.keymap.set('n', '<leader>u', function()
+  vim.cmd.UndotreeToggle()
+  vim.cmd.UndotreeFocus()
+end)
 
 -- Insert blank line
 vim.keymap.set('n', '<Enter>', 'o<Esc>')
