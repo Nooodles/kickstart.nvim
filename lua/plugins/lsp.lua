@@ -72,6 +72,16 @@ return {
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
+          local execute_code_action = function(action)
+            vim.lsp.buf.code_action {
+              apply = true,
+              context = {
+                only = { action },
+                diagnostics = {},
+              },
+            }
+          end
+
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
@@ -104,6 +114,24 @@ return {
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+
+          -- I'va added those below but they only work for typescript. In theory they should be added on attached but
+          -- I couldn't make it work...
+          map('<leader>cM', function()
+            execute_code_action 'source.addMissingImports.ts'
+          end, '[C]ode Add [M]issing Imports', { 'n', 'x' })
+
+          map('<leader>co', function()
+            execute_code_action 'source.organizeImports'
+          end, '[C]ode [O]rganize Imports', { 'n', 'x' })
+
+          map('<leader>cu', function()
+            execute_code_action 'source.removeUnused.ts'
+          end, '[C]ode Remove [U]nuse Imports', { 'n', 'x' })
+
+          map('<leader>cD', function()
+            execute_code_action 'source.fixAll.ts'
+          end, '[C]ode Fix All [D]iagnostics', { 'n', 'x' })
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
