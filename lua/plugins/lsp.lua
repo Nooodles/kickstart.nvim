@@ -115,6 +115,8 @@ return {
           -- or a suggestion from your LSP for this to activate.
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
 
+          map('<leader>ch', vim.lsp.buf.hover, '[C]ode [H]over', { 'n', 'x' })
+
           -- I'va added those below but they only work for typescript. In theory they should be added on attached but
           -- I couldn't make it work...
           map('<leader>cM', function()
