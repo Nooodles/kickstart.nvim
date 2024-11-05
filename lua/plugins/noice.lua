@@ -34,6 +34,7 @@ return {
     routes = {
       -- { filter = { find = 'E162' }, view = 'mini' },
       { filter = { event = 'msg_show', kind = '', find = 'written' }, view = 'mini' },
+      { filter = { event = 'msg_showmode' }, view = 'notify' },
       { filter = { find = '%d+ line less' }, view = 'mini' },
       { filter = { find = '%d+ less lines' }, view = 'mini' },
       { filter = { find = '%d+ fewer lines' }, view = 'mini' },
