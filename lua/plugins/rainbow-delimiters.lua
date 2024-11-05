@@ -1,5 +1,6 @@
 return {
   'HiPhish/rainbow-delimiters.nvim',
+  lazy = false,
   config = function()
     require('rainbow-delimiters.setup').setup {
       highlight = {
@@ -11,7 +12,6 @@ return {
         'RainbowDelimiterViolet',
         'RainbowDelimiterCyan',
       },
-      vim.api.nvim_set_hl(0, 'RainbowDelimiterYellow', { fg = '#FFDD00', bg = 'NONE' }),
     }
   end,
 }

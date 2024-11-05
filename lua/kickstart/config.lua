@@ -77,3 +77,10 @@ vim.opt.scrolloff = 10
 -- Not load netrw at startup
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- This seems to be needed for obsidian
+vim.opt.conceallevel = 1
+
+-- This would be better to have this in the rainbow-delimiters specifi config
+-- But it seems to not be taken into account every time.
+vim.api.nvim_set_hl(0, 'RainbowDelimiterYellow', { fg = '#FFDD00', bg = 'NONE' })
